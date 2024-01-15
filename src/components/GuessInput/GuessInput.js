@@ -20,11 +20,14 @@ function GuessInput({wordLength}) {
          >
          <label htmlFor="guess-input">Enter guess:</label>
          <input
+	   required
+	   minLength={5}
+	   maxLength={5}
 	   id="guess-input"
 	   type="text"
 	   value={guess}
 	   onChange={event => {
-	     setGuess(event.target.value.toUpperCase().substring(0,5))
+	     setGuess(event.target.value.toUpperCase())
     	   }}
           />
           </form>;
